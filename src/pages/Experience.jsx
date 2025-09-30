@@ -115,7 +115,7 @@ const Experience = () => {
         >
           <div
             ref={carouselRef}
-            className="flex"
+            className="flex justify-center"
             style={{
               willChange: "transform",
               // Initialize position
@@ -148,7 +148,7 @@ const Experience = () => {
             ))}
           </div> */}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-center gap-6">
             {experiences.map((item, index) => (
               <ExperienceCard
                 key={`static-${index}`}
