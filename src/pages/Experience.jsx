@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 
 const Experience = () => {
-  const [pausedStates, setPausedStates] = useState([false, false, false]);
+  const [isPaused, setIsPaused] = useState(false);
+  const carouselRef = useRef(null);
+  const animationRef = useRef(null);
+  const scrollPositionRef = useRef(0); // Track scroll position
   const navigate = useNavigate();
 
   // Sample data for experiences
@@ -54,15 +57,41 @@ const Experience = () => {
   // Duplicate items for infinite carousel effect
   const carouselItems = [...experiences, ...experiences];
 
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    let lastTimestamp = 0;
+    const speed = 0.5; // Slower speed for better control
+
+    const animate = (timestamp) => {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const deltaTime = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+
+      if (!isPaused && carousel) {
+        // Update position based on time for smooth animation
+        scrollPositionRef.current += (speed * deltaTime) / 16;
+
+        // Reset to start when reaching the end for seamless loop
+        if (scrollPositionRef.current >= carousel.scrollWidth / 2) {
+          scrollPositionRef.current = 0;
+        }
+
+        carousel.style.transform = `translateX(-${scrollPositionRef.current}px)`;
+      }
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isPaused]);
+
   const handleCardClick = (experience) => {
     navigate(`/experience/${experience.id}`, { state: { experience } });
-    // Alternatively for new tab: window.open(`/experience/${experience.id}`, '_blank');
-  };
-
-  const togglePause = (index) => {
-    const newPausedStates = [...pausedStates];
-    newPausedStates[index] = !newPausedStates[index];
-    setPausedStates(newPausedStates);
   };
 
   return (
@@ -75,20 +104,27 @@ const Experience = () => {
           Discover handcrafted journeys that create lifelong memories
         </p>
 
-        {/* First Carousel (Left to Right) */}
+        <h2 className="text-2xl font-serif text-gray-800 mb-8 pl-4 border-l-4 border-gold">
+          Featured Experiences
+        </h2>
+        {/* Single Carousel */}
         <div
-          className="mb-20 overflow-hidden relative"
-          onMouseEnter={() => togglePause(0)}
-          onMouseLeave={() => togglePause(0)}
+          className="mb-20 py-3 px-3 overflow-hidden relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           <div
-            className={`flex ${
-              pausedStates[0] ? "animation-paused" : "animate-scroll"
-            }`}
+            ref={carouselRef}
+            className="flex"
+            style={{
+              willChange: "transform",
+              // Initialize position
+              transform: `translateX(-${scrollPositionRef.current}px)`,
+            }}
           >
             {carouselItems.map((item, index) => (
               <ExperienceCard
-                key={`carousel1-${index}`}
+                key={`carousel-${index}`}
                 item={item}
                 onClick={handleCardClick}
               />
@@ -96,47 +132,32 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Second Carousel (Right to Left) */}
-        <div
-          className="mb-20 overflow-hidden relative"
-          onMouseEnter={() => togglePause(1)}
-          onMouseLeave={() => togglePause(1)}
-        >
-          <div
-            className={`flex ${
-              pausedStates[1] ? "animation-paused" : "animate-scroll-reverse"
-            }`}
-          >
-            {carouselItems.map((item, index) => (
+        <div>
+          <h2 className="text-2xl font-serif text-gray-800 mb-8 pl-4 border-l-4 border-gold">
+            All Experiences
+          </h2>
+
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredDestinations.map((destination) => (
+              <DestinationCard
+                key={destination.id}
+                destination={destination}
+                onClick={handleCardClick}
+                featured={false}
+              />
+            ))}
+          </div> */}
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {experiences.map((item, index) => (
               <ExperienceCard
-                key={`carousel2-${index}`}
+                key={`static-${index}`}
                 item={item}
                 onClick={handleCardClick}
               />
             ))}
           </div>
         </div>
-
-        {/* Third Carousel (Left to Right) */}
-        {/* <div
-          className="overflow-hidden relative"
-          onMouseEnter={() => togglePause(2)}
-          onMouseLeave={() => togglePause(2)}
-        >
-          <div
-            className={`flex ${
-              pausedStates[2] ? "animation-paused" : "animate-scroll"
-            }`}
-          >
-            {carouselItems.map((item, index) => (
-              <ExperienceCard
-                key={`carousel3-${index}`}
-                item={item}
-                onClick={handleCardClick}
-              />
-            ))}
-          </div>
-        </div> */}
       </div>
     </div>
   );
@@ -146,7 +167,7 @@ const Experience = () => {
 const ExperienceCard = ({ item, onClick }) => {
   return (
     <div
-      className="flex-shrink-0 w-80 mx-4 cursor-pointer group"
+      className="flex-shrink-0 w-72 mx-3 cursor-pointer group"
       onClick={() => onClick(item)}
     >
       <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">

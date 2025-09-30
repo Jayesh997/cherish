@@ -46,14 +46,19 @@
   width: calc(200%);
 }
 
+.animation-paused {
+  animation-play-state: paused;
+  /* Remove transition to prevent jumping */
+  transition: none !important;
+}
 .animate-scroll-reverse {
   animation: scroll-reverse 40s linear infinite;
   width: calc(200%);
 }
 
-.animation-paused {
+/* .animation-paused {
   animation-play-state: paused;
-}
+} */
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -62,7 +67,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #fbfbfb;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

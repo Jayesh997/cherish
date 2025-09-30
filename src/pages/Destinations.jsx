@@ -71,7 +71,7 @@ const Destinations = () => {
       description: "Royal palaces and sandalwood aromas",
       image: new URL("../assets/images/aboutUs.jpg", import.meta.url).href,
       category: "Heritage",
-      featured: false,
+      featured: true,
     },
   ];
 
@@ -200,6 +200,9 @@ const DestinationCard = ({ destination, onClick, featured }) => {
             {destination.description}
           </p>
           <div className="mt-4">
+            <span className="inline-block px-3 py-1 bg-white text-black text-xs rounded-full mx-2">
+              India
+            </span>
             <span className="inline-block px-3 py-1 bg-gold text-white text-xs rounded-full">
               {destination.category}
             </span>

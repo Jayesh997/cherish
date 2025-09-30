@@ -1,6 +1,49 @@
 import React from "react";
 import aboutUs from "../assets/images/aboutUs.jpg"; // Adjust the path as necessary
 const AboutUs = () => {
+  const testimonials = [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      location: "New York, USA",
+      text: "Cherish Journeys planned our dream honeymoon to Bali. Every detail was perfect - from the private villa to the customized excursions. We couldn't have asked for a more magical experience!",
+      rating: 5,
+    },
+    {
+      id: 2,
+      name: "Raj Patel",
+      location: "Mumbai, India",
+      text: "The Golden Triangle tour exceeded all expectations. Our guide was incredibly knowledgeable and the hotels were luxurious. Will definitely use Cherish Journeys for our next vacation!",
+      rating: 5,
+    },
+    {
+      id: 3,
+      name: "Emily Chen",
+      location: "Singapore",
+      text: "As a solo traveler, I was nervous about visiting India, but Cherish Journeys made me feel safe and cared for throughout my entire journey. Their attention to detail is unmatched.",
+      rating: 4,
+    },
+  ];
+
+  const renderStars = (rating) => {
+    return (
+      <div className="flex justify-center mb-2">
+        {[...Array(5)].map((_, i) => (
+          <svg
+            key={i}
+            className={`w-5 h-5 ${
+              i < rating ? "text-yellow-400" : "text-gray-300"
+            }`}
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -61,7 +104,7 @@ const AboutUs = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <div className="text-gold text-4xl mb-4">✨</div>
+              <div className="text-gold text-7xl mb-4">✨</div>
               <h3 className="text-xl font-semibold mb-3">
                 Tailored Experiences
               </h3>
@@ -71,7 +114,7 @@ const AboutUs = () => {
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <div className="text-gold text-4xl mb-4">💰</div>
+              <div className="text-gold text-7xl mb-4">😇</div>
               <h3 className="text-xl font-semibold mb-3">
                 Transparent Pricing
               </h3>
@@ -81,7 +124,7 @@ const AboutUs = () => {
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <div className="text-gold text-4xl mb-4">🏆</div>
+              <div className="text-gold text-7xl mb-4">🙏</div>
               <h3 className="text-xl font-semibold mb-3">Quality Partners</h3>
               <p className="text-gray-600">
                 We work only with the best transport companies, qualified
@@ -120,6 +163,33 @@ const AboutUs = () => {
                 className="rounded-lg shadow-xl"
               />
             </div>
+          </div>
+        </section>
+
+        <section className="mb-20">
+          <h2 className="text-3xl font-serif text-center text-gray-800 mb-12">
+            What Our Travelers Say
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+              >
+                {renderStars(testimonial.rating)}
+                <blockquote className="text-gray-600 italic mb-6">
+                  "{testimonial.text}"
+                </blockquote>
+                <div className="text-center">
+                  <p className="font-serif text-gray-800 font-medium">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    {testimonial.location}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
