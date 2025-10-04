@@ -12,45 +12,417 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: "Luxury Himalayan Retreat",
-      description:
-        "Experience breathtaking mountain views from our exclusive luxury lodges in the Himalayas.",
+      title: "Royal India & Wildlife Odyssey",
+      description: "DELHI-AGRA-RANTHAMBORE-JAIPUR",
       image: new URL("../assets/images/aboutUs.jpg", import.meta.url).href,
+      duration: "9 Days / 8 Nights",
+      price: "INR 16,888",
+      tourHighlights: [
+        "Delhi Discovery in Style: Explore the contrasts of Old & New Delhi with private guided visits to Jama Masjid, India Gate, Qutub Minar, and the vibrant Khari Baoli Spice Market.",
+        "Agra & The Eternal Taj Mahal: Admire the timeless beauty of the Taj Mahal at sunrise and step into history at the majestic Agra Fort.",
+        "Fatehpur Sikri Heritage Stop: Stroll through the red sandstone Mughal marvel, a UNESCO World Heritage Site, en route to Ranthambore.",
+        "Luxury Wildlife Adventure: Embark on exclusive morning and afternoon safaris in Ranthambore National Park, with chances to spot Bengal Tigers, leopards, sloth bears, and over 300 bird species.",
+        "Jaipur – The Regal Pink City: Discover Amber Fort, City Palace, and Jantar Mantar. Enhance your experience with a curated block-printing and carpet-weaving workshop led by master artisans.",
+        "Immersive Cultural Journey: Indulge in India's rich heritage, exquisite architecture, and timeless crafts with personalized experiences.",
+        "Seamless Luxury Travel: Private transfers, chauffeured journeys, and expert guides ensuring comfort at every step.",
+        "Grand Farewell in Delhi: Conclude your journey with a specially curated farewell dinner, celebrating the flavors and traditions of India.",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "Delhi: Arrival",
+          description: "Arrival, transfer to hotel, overnight stay.",
+        },
+        {
+          day: 2,
+          title: "Delhi: Full-day Sightseeing",
+          description:
+            "Old & New Delhi, Khari Baoli Spice Market, Jama Masjid, India Gate, Qutub Minar.",
+        },
+        {
+          day: 3,
+          title: "Agra",
+          description: "Drive to Agra, visit Agra Fort.",
+        },
+        {
+          day: 4,
+          title: "Taj Mahal & Ranthambore",
+          description:
+            "Visit Taj Mahal, stop at Fatehpur Sikri, transfer to Ranthambore.",
+        },
+        {
+          day: 5,
+          title: "Ranthambore: Wildlife Safari",
+          description:
+            "Morning & afternoon wildlife safaris to spot tigers, leopards, and birds.",
+        },
+        {
+          day: 6,
+          title: "Jaipur",
+          description: "Drive to Jaipur, day at leisure.",
+        },
+        {
+          day: 7,
+          title: "Jaipur: Sightseeing",
+          description:
+            "Hawa Mahal, Amber Fort, City Palace, Jantar Mantar, block printing & carpet weaving workshop.",
+        },
+        {
+          day: 8,
+          title: "Delhi: Return",
+          description: "Return to Delhi, farewell dinner.",
+        },
+        {
+          day: 9,
+          title: "Departure",
+          description: "Transfer to Delhi airport for flight home.",
+        },
+      ],
     },
     {
       id: 2,
       title: "Golden Triangle Tour",
-      description:
-        "Discover India's rich heritage with our curated Golden Triangle journey.",
+      description: "DELHI-AGRA-RANTHAMBORE-JAIPUR",
       image: new URL("../assets/images/aboutUs.jpg", import.meta.url).href,
+      duration: "9 Days / 8 Nights",
+      price: "INR 16,888",
+      tourHighlights: [
+        "Delhi Discovery in Style: Explore the contrasts of Old & New Delhi with private guided visits to Jama Masjid, India Gate, Qutub Minar, and the vibrant Khari Baoli Spice Market.",
+        "Agra & The Eternal Taj Mahal: Admire the timeless beauty of the Taj Mahal at sunrise and step into history at the majestic Agra Fort.",
+        "Fatehpur Sikri Heritage Stop: Stroll through the red sandstone Mughal marvel, a UNESCO World Heritage Site, en route to Ranthambore.",
+        "Luxury Wildlife Adventure: Embark on exclusive morning and afternoon safaris in Ranthambore National Park, with chances to spot Bengal Tigers, leopards, sloth bears, and over 300 bird species.",
+        "Jaipur – The Regal Pink City: Discover Amber Fort, City Palace, and Jantar Mantar. Enhance your experience with a curated block-printing and carpet-weaving workshop led by master artisans.",
+        "Immersive Cultural Journey: Indulge in India's rich heritage, exquisite architecture, and timeless crafts with personalized experiences.",
+        "Seamless Luxury Travel: Private transfers, chauffeured journeys, and expert guides ensuring comfort at every step.",
+        "Grand Farewell in Delhi: Conclude your journey with a specially curated farewell dinner, celebrating the flavors and traditions of India.",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "Delhi: Arrival",
+          description: "Arrival, transfer to hotel, overnight stay.",
+        },
+        {
+          day: 2,
+          title: "Delhi: Full-day Sightseeing",
+          description:
+            "Old & New Delhi, Khari Baoli Spice Market, Jama Masjid, India Gate, Qutub Minar.",
+        },
+        {
+          day: 3,
+          title: "Agra",
+          description: "Drive to Agra, visit Agra Fort.",
+        },
+        {
+          day: 4,
+          title: "Taj Mahal & Ranthambore",
+          description:
+            "Visit Taj Mahal, stop at Fatehpur Sikri, transfer to Ranthambore.",
+        },
+        {
+          day: 5,
+          title: "Ranthambore: Wildlife Safari",
+          description:
+            "Morning & afternoon wildlife safaris to spot tigers, leopards, and birds.",
+        },
+        {
+          day: 6,
+          title: "Jaipur",
+          description: "Drive to Jaipur, day at leisure.",
+        },
+        {
+          day: 7,
+          title: "Jaipur: Sightseeing",
+          description:
+            "Hawa Mahal, Amber Fort, City Palace, Jantar Mantar, block printing & carpet weaving workshop.",
+        },
+        {
+          day: 8,
+          title: "Delhi: Return",
+          description: "Return to Delhi, farewell dinner.",
+        },
+        {
+          day: 9,
+          title: "Departure",
+          description: "Transfer to Delhi airport for flight home.",
+        },
+      ],
     },
     {
       id: 3,
       title: "Kerala Backwaters Cruise",
-      description:
-        "Sail through serene backwaters in traditional houseboats with premium amenities.",
+      description: "DELHI-AGRA-RANTHAMBORE-JAIPUR",
       image: new URL("../assets/images/aboutUs.jpg", import.meta.url).href,
+      duration: "9 Days / 8 Nights",
+      price: "INR 16,888",
+      tourHighlights: [
+        "Delhi Discovery in Style: Explore the contrasts of Old & New Delhi with private guided visits to Jama Masjid, India Gate, Qutub Minar, and the vibrant Khari Baoli Spice Market.",
+        "Agra & The Eternal Taj Mahal: Admire the timeless beauty of the Taj Mahal at sunrise and step into history at the majestic Agra Fort.",
+        "Fatehpur Sikri Heritage Stop: Stroll through the red sandstone Mughal marvel, a UNESCO World Heritage Site, en route to Ranthambore.",
+        "Luxury Wildlife Adventure: Embark on exclusive morning and afternoon safaris in Ranthambore National Park, with chances to spot Bengal Tigers, leopards, sloth bears, and over 300 bird species.",
+        "Jaipur – The Regal Pink City: Discover Amber Fort, City Palace, and Jantar Mantar. Enhance your experience with a curated block-printing and carpet-weaving workshop led by master artisans.",
+        "Immersive Cultural Journey: Indulge in India's rich heritage, exquisite architecture, and timeless crafts with personalized experiences.",
+        "Seamless Luxury Travel: Private transfers, chauffeured journeys, and expert guides ensuring comfort at every step.",
+        "Grand Farewell in Delhi: Conclude your journey with a specially curated farewell dinner, celebrating the flavors and traditions of India.",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "Delhi: Arrival",
+          description: "Arrival, transfer to hotel, overnight stay.",
+        },
+        {
+          day: 2,
+          title: "Delhi: Full-day Sightseeing",
+          description:
+            "Old & New Delhi, Khari Baoli Spice Market, Jama Masjid, India Gate, Qutub Minar.",
+        },
+        {
+          day: 3,
+          title: "Agra",
+          description: "Drive to Agra, visit Agra Fort.",
+        },
+        {
+          day: 4,
+          title: "Taj Mahal & Ranthambore",
+          description:
+            "Visit Taj Mahal, stop at Fatehpur Sikri, transfer to Ranthambore.",
+        },
+        {
+          day: 5,
+          title: "Ranthambore: Wildlife Safari",
+          description:
+            "Morning & afternoon wildlife safaris to spot tigers, leopards, and birds.",
+        },
+        {
+          day: 6,
+          title: "Jaipur",
+          description: "Drive to Jaipur, day at leisure.",
+        },
+        {
+          day: 7,
+          title: "Jaipur: Sightseeing",
+          description:
+            "Hawa Mahal, Amber Fort, City Palace, Jantar Mantar, block printing & carpet weaving workshop.",
+        },
+        {
+          day: 8,
+          title: "Delhi: Return",
+          description: "Return to Delhi, farewell dinner.",
+        },
+        {
+          day: 9,
+          title: "Departure",
+          description: "Transfer to Delhi airport for flight home.",
+        },
+      ],
     },
     {
       id: 4,
       title: "Rajasthan Royal Experience",
-      description:
-        "Live like royalty in heritage palaces converted into luxury hotels.",
+      description: "DELHI-AGRA-RANTHAMBORE-JAIPUR",
       image: new URL("../assets/images/aboutUs.jpg", import.meta.url).href,
+      duration: "9 Days / 8 Nights",
+      price: "INR 16,888",
+      tourHighlights: [
+        "Delhi Discovery in Style: Explore the contrasts of Old & New Delhi with private guided visits to Jama Masjid, India Gate, Qutub Minar, and the vibrant Khari Baoli Spice Market.",
+        "Agra & The Eternal Taj Mahal: Admire the timeless beauty of the Taj Mahal at sunrise and step into history at the majestic Agra Fort.",
+        "Fatehpur Sikri Heritage Stop: Stroll through the red sandstone Mughal marvel, a UNESCO World Heritage Site, en route to Ranthambore.",
+        "Luxury Wildlife Adventure: Embark on exclusive morning and afternoon safaris in Ranthambore National Park, with chances to spot Bengal Tigers, leopards, sloth bears, and over 300 bird species.",
+        "Jaipur – The Regal Pink City: Discover Amber Fort, City Palace, and Jantar Mantar. Enhance your experience with a curated block-printing and carpet-weaving workshop led by master artisans.",
+        "Immersive Cultural Journey: Indulge in India's rich heritage, exquisite architecture, and timeless crafts with personalized experiences.",
+        "Seamless Luxury Travel: Private transfers, chauffeured journeys, and expert guides ensuring comfort at every step.",
+        "Grand Farewell in Delhi: Conclude your journey with a specially curated farewell dinner, celebrating the flavors and traditions of India.",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "Delhi: Arrival",
+          description: "Arrival, transfer to hotel, overnight stay.",
+        },
+        {
+          day: 2,
+          title: "Delhi: Full-day Sightseeing",
+          description:
+            "Old & New Delhi, Khari Baoli Spice Market, Jama Masjid, India Gate, Qutub Minar.",
+        },
+        {
+          day: 3,
+          title: "Agra",
+          description: "Drive to Agra, visit Agra Fort.",
+        },
+        {
+          day: 4,
+          title: "Taj Mahal & Ranthambore",
+          description:
+            "Visit Taj Mahal, stop at Fatehpur Sikri, transfer to Ranthambore.",
+        },
+        {
+          day: 5,
+          title: "Ranthambore: Wildlife Safari",
+          description:
+            "Morning & afternoon wildlife safaris to spot tigers, leopards, and birds.",
+        },
+        {
+          day: 6,
+          title: "Jaipur",
+          description: "Drive to Jaipur, day at leisure.",
+        },
+        {
+          day: 7,
+          title: "Jaipur: Sightseeing",
+          description:
+            "Hawa Mahal, Amber Fort, City Palace, Jantar Mantar, block printing & carpet weaving workshop.",
+        },
+        {
+          day: 8,
+          title: "Delhi: Return",
+          description: "Return to Delhi, farewell dinner.",
+        },
+        {
+          day: 9,
+          title: "Departure",
+          description: "Transfer to Delhi airport for flight home.",
+        },
+      ],
     },
     {
       id: 5,
       title: "Goa Beachfront Villas",
-      description:
-        "Private beach access with world-class service in our premium villas.",
+      description: "DELHI-AGRA-RANTHAMBORE-JAIPUR",
       image: new URL("../assets/images/aboutUs.jpg", import.meta.url).href,
+      duration: "9 Days / 8 Nights",
+      price: "INR 16,888",
+      tourHighlights: [
+        "Delhi Discovery in Style: Explore the contrasts of Old & New Delhi with private guided visits to Jama Masjid, India Gate, Qutub Minar, and the vibrant Khari Baoli Spice Market.",
+        "Agra & The Eternal Taj Mahal: Admire the timeless beauty of the Taj Mahal at sunrise and step into history at the majestic Agra Fort.",
+        "Fatehpur Sikri Heritage Stop: Stroll through the red sandstone Mughal marvel, a UNESCO World Heritage Site, en route to Ranthambore.",
+        "Luxury Wildlife Adventure: Embark on exclusive morning and afternoon safaris in Ranthambore National Park, with chances to spot Bengal Tigers, leopards, sloth bears, and over 300 bird species.",
+        "Jaipur – The Regal Pink City: Discover Amber Fort, City Palace, and Jantar Mantar. Enhance your experience with a curated block-printing and carpet-weaving workshop led by master artisans.",
+        "Immersive Cultural Journey: Indulge in India's rich heritage, exquisite architecture, and timeless crafts with personalized experiences.",
+        "Seamless Luxury Travel: Private transfers, chauffeured journeys, and expert guides ensuring comfort at every step.",
+        "Grand Farewell in Delhi: Conclude your journey with a specially curated farewell dinner, celebrating the flavors and traditions of India.",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "Delhi: Arrival",
+          description: "Arrival, transfer to hotel, overnight stay.",
+        },
+        {
+          day: 2,
+          title: "Delhi: Full-day Sightseeing",
+          description:
+            "Old & New Delhi, Khari Baoli Spice Market, Jama Masjid, India Gate, Qutub Minar.",
+        },
+        {
+          day: 3,
+          title: "Agra",
+          description: "Drive to Agra, visit Agra Fort.",
+        },
+        {
+          day: 4,
+          title: "Taj Mahal & Ranthambore",
+          description:
+            "Visit Taj Mahal, stop at Fatehpur Sikri, transfer to Ranthambore.",
+        },
+        {
+          day: 5,
+          title: "Ranthambore: Wildlife Safari",
+          description:
+            "Morning & afternoon wildlife safaris to spot tigers, leopards, and birds.",
+        },
+        {
+          day: 6,
+          title: "Jaipur",
+          description: "Drive to Jaipur, day at leisure.",
+        },
+        {
+          day: 7,
+          title: "Jaipur: Sightseeing",
+          description:
+            "Hawa Mahal, Amber Fort, City Palace, Jantar Mantar, block printing & carpet weaving workshop.",
+        },
+        {
+          day: 8,
+          title: "Delhi: Return",
+          description: "Return to Delhi, farewell dinner.",
+        },
+        {
+          day: 9,
+          title: "Departure",
+          description: "Transfer to Delhi airport for flight home.",
+        },
+      ],
     },
     {
       id: 6,
       title: "Wildlife Safari Adventure",
-      description:
-        "Luxury tented camps with exclusive wildlife viewing experiences.",
+      description: "DELHI-AGRA-RANTHAMBORE-JAIPUR",
       image: new URL("../assets/images/aboutUs.jpg", import.meta.url).href,
+      duration: "9 Days / 8 Nights",
+      price: "INR 16,888",
+      tourHighlights: [
+        "Delhi Discovery in Style: Explore the contrasts of Old & New Delhi with private guided visits to Jama Masjid, India Gate, Qutub Minar, and the vibrant Khari Baoli Spice Market.",
+        "Agra & The Eternal Taj Mahal: Admire the timeless beauty of the Taj Mahal at sunrise and step into history at the majestic Agra Fort.",
+        "Fatehpur Sikri Heritage Stop: Stroll through the red sandstone Mughal marvel, a UNESCO World Heritage Site, en route to Ranthambore.",
+        "Luxury Wildlife Adventure: Embark on exclusive morning and afternoon safaris in Ranthambore National Park, with chances to spot Bengal Tigers, leopards, sloth bears, and over 300 bird species.",
+        "Jaipur – The Regal Pink City: Discover Amber Fort, City Palace, and Jantar Mantar. Enhance your experience with a curated block-printing and carpet-weaving workshop led by master artisans.",
+        "Immersive Cultural Journey: Indulge in India's rich heritage, exquisite architecture, and timeless crafts with personalized experiences.",
+        "Seamless Luxury Travel: Private transfers, chauffeured journeys, and expert guides ensuring comfort at every step.",
+        "Grand Farewell in Delhi: Conclude your journey with a specially curated farewell dinner, celebrating the flavors and traditions of India.",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "Delhi: Arrival",
+          description: "Arrival, transfer to hotel, overnight stay.",
+        },
+        {
+          day: 2,
+          title: "Delhi: Full-day Sightseeing",
+          description:
+            "Old & New Delhi, Khari Baoli Spice Market, Jama Masjid, India Gate, Qutub Minar.",
+        },
+        {
+          day: 3,
+          title: "Agra",
+          description: "Drive to Agra, visit Agra Fort.",
+        },
+        {
+          day: 4,
+          title: "Taj Mahal & Ranthambore",
+          description:
+            "Visit Taj Mahal, stop at Fatehpur Sikri, transfer to Ranthambore.",
+        },
+        {
+          day: 5,
+          title: "Ranthambore: Wildlife Safari",
+          description:
+            "Morning & afternoon wildlife safaris to spot tigers, leopards, and birds.",
+        },
+        {
+          day: 6,
+          title: "Jaipur",
+          description: "Drive to Jaipur, day at leisure.",
+        },
+        {
+          day: 7,
+          title: "Jaipur: Sightseeing",
+          description:
+            "Hawa Mahal, Amber Fort, City Palace, Jantar Mantar, block printing & carpet weaving workshop.",
+        },
+        {
+          day: 8,
+          title: "Delhi: Return",
+          description: "Return to Delhi, farewell dinner.",
+        },
+        {
+          day: 9,
+          title: "Departure",
+          description: "Transfer to Delhi airport for flight home.",
+        },
+      ],
     },
   ];
 
@@ -137,17 +509,6 @@ const Experience = () => {
             All Experiences
           </h2>
 
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {filteredDestinations.map((destination) => (
-              <DestinationCard
-                key={destination.id}
-                destination={destination}
-                onClick={handleCardClick}
-                featured={false}
-              />
-            ))}
-          </div> */}
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-center gap-6">
             {experiences.map((item, index) => (
               <ExperienceCard
@@ -167,22 +528,49 @@ const Experience = () => {
 const ExperienceCard = ({ item, onClick }) => {
   return (
     <div
-      className="flex-shrink-0 w-72 mx-3 cursor-pointer group"
+      className="flex-shrink-0 w-72 mx-3 cursor-pointer group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
       onClick={() => onClick(item)}
     >
-      <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
-        <div className="h-48 overflow-hidden">
-          <img
-            src={item.image}
-            alt={item.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-        </div>
-        <div className="p-6">
-          <h3 className="text-xl font-serif text-gray-800 mb-2">
-            {item.title}
-          </h3>
-          <p className="text-gray-600">{item.description}</p>
+      <div className="h-48 overflow-hidden relative">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        {/* Duration Label */}
+        {item.duration && (
+          <div className="absolute top-3 left-3 bg-black bg-opacity-80 text-white px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm border border-white border-opacity-20">
+            {item.duration}
+          </div>
+        )}
+      </div>
+
+      {/* Content Section */}
+      <div className="p-6">
+        <h3 className="text-xl font-serif text-gray-800 mb-2 line-clamp-2 group-hover:text-gold transition-colors duration-300">
+          {item.title}
+        </h3>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+          {item.description}
+        </p>
+      </div>
+
+      {/* Price & CTA Section */}
+      <div className="px-6 pb-6 ">
+        <div className="flex items-center justify-between">
+          <div className="flex flex-col">
+            <p className="text-xs text-gray-500 font-medium uppercase tracking-wide mb-1">
+              Starting from
+            </p>
+            <h1 className="text-xl font-bold text-gray-800 font-serif">
+              {item.price || "INR 16,888"}
+            </h1>
+          </div>
+          <div>
+            <button className="bg-gold text-white px-2 py-2.5 rounded-full text-sm font-semibold hover:bg-gold-dark transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gold focus:ring-opacity-50">
+              View Package
+            </button>
+          </div>
         </div>
       </div>
     </div>
