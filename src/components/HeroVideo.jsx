@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import { NavLink } from "react-router";
-import WebsiteFrontVideo from "../assets/videos/WebsiteFrontVideo.mp4";
+import WebsiteFrontVideo from "../assets/videos/WebsiteFrontVideoCroppedNew.mp4";
 import logo from "../assets/images/navLogo.png";
 
 const HeroVideo = () => {
